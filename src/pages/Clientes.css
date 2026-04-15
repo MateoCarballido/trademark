@@ -1,0 +1,31 @@
+.industrias-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.industria-card {
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+
+.industria-card:hover {
+  background: var(--surface-muted);
+}
+
+.industria-icon {
+  font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+  .industrias-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

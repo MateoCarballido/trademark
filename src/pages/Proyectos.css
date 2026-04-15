@@ -1,0 +1,26 @@
+.proyectos-filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border: 1px solid var(--border-inverse);
+  background: transparent;
+  color: var(--text-on-dark);
+  border-radius: 99px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+  font-weight: 700;
+}

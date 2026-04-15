@@ -1,0 +1,306 @@
+.portfolio-section {
+  background-color: var(--bg-light);
+}
+
+.portfolio-header {
+  margin-bottom: clamp(6rem, 15vw, 12rem);
+}
+
+.portfolio-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.portfolio-brutalist-grid {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4rem, 10vw, 8rem);
+}
+
+.portfolio-art-card {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.offset-card {
+  align-self: flex-end;
+}
+
+/* Image container is now a plain div (not a link) */
+.portfolio-art-image-container {
+  overflow: hidden;
+  margin-bottom: 2rem;
+  background: var(--surface);
+  position: relative;
+  aspect-ratio: 16 / 11;
+  min-height: clamp(300px, 45vw, 680px);
+  border: 1px solid var(--border-soft);
+}
+
+/* The link covers the full container area */
+.portfolio-art-image-link {
+  display: block;
+  position: absolute;
+  inset: 0;
+  text-decoration: none;
+}
+
+/* Carousel wrapper — receives the parallax transform from Framer Motion */
+.carousel-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Individual slides — crossfade via opacity */
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: clamp(0.75rem, 1.8vw, 1.25rem);
+  opacity: 0;
+  transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  filter: grayscale(15%);
+  will-change: opacity, transform;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.portfolio-art-card:hover .carousel-slide {
+  filter: grayscale(0%);
+}
+
+
+/* ── Carousel controls ────────────────────────────────────── */
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: var(--overlay-dark);
+  border: 1px solid rgba(92, 107, 115, 0.35);
+  cursor: pointer;
+  color: var(--text-on-dark);
+  /* 44×44px minimum touch target */
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  border-radius: 3px;
+  touch-action: manipulation;
+  transition: color 0.2s ease,
+              background 0.2s ease,
+              border-color 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.carousel-btn:hover {
+  color: var(--accent);
+  background: var(--overlay-dark-strong);
+  border-color: var(--accent);
+}
+
+.carousel-btn-prev {
+  left: 1rem;
+}
+
+.carousel-btn-next {
+  right: 1rem;
+}
+
+/* Dot indicators */
+.carousel-dots {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0;
+  z-index: 10;
+}
+
+/* 44×44px transparent tap area; visual dot via ::before */
+.carousel-dot {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  touch-action: manipulation;
+  flex-shrink: 0;
+}
+
+.carousel-dot::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(250, 249, 247, 0.35);
+  transition: background 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.carousel-dot.active::before {
+  background: var(--accent);
+  transform: scale(1.5);
+}
+
+/* Slide counter (top-right corner) */
+.carousel-counter {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--text-on-dark-muted);
+  pointer-events: none;
+}
+
+/* ── See all CTA ───────────────────────────────────────────── */
+
+.portfolio-all-cta {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: clamp(4rem, 8vw, 6rem);
+}
+
+.portfolio-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 0.4rem;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.portfolio-all-link:hover {
+  color: var(--accent);
+  gap: 1.1rem;
+}
+
+/* ── Card meta ─────────────────────────────────────────────── */
+
+.portfolio-art-meta {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.portfolio-art-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.portfolio-art-client {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.portfolio-art-type {
+  font-size: 1.2rem;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+.d-desktop-only {
+  display: inline-flex;
+}
+
+.d-mobile-only {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .portfolio-header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .d-desktop-only {
+    display: none;
+  }
+
+  .d-mobile-only {
+    display: flex;
+    justify-content: center;
+  }
+
+  .portfolio-art-image-container {
+    aspect-ratio: 4 / 3;
+    min-height: 260px;
+  }
+
+  .carousel-btn {
+    opacity: 1;
+  }
+
+  .carousel-counter {
+    opacity: 1;
+  }
+}
+
+/* ── Focus states ──────────────────────────────────────────── */
+
+.carousel-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.carousel-dot:focus-visible::before {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ── Reduced motion ────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-slide {
+    transition: opacity 0.15s ease;
+  }
+
+  .carousel-dot,
+  .carousel-btn {
+    transition: none;
+  }
+}

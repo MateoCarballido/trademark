@@ -1,0 +1,156 @@
+/* Hero */
+.nosotros-hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.nosotros-marquee-wrap {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.nosotros-marquee-title {
+  font-size: clamp(8rem, 25vw, 30rem);
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(250, 249, 247, 0.15);
+  line-height: 0.8;
+  margin: 0;
+}
+
+.nosotros-hero-text {
+  position: relative;
+  padding-left: 10vw;
+  max-width: 800px;
+  mix-blend-mode: difference;
+  z-index: 10;
+}
+
+.nosotros-hero-text h2 {
+  color: var(--warm-white);
+  margin-bottom: 1rem;
+  font-size: clamp(2rem, 4vw, 4rem);
+}
+
+.nosotros-hero-text p {
+  color: var(--text-on-dark);
+  font-size: 1.25rem;
+  font-family: var(--font-heading);
+}
+
+/* Philosophy */
+.nosotros-philosophy {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 6rem;
+}
+
+.nosotros-philosophy-title {
+  position: sticky;
+  top: 150px;
+  font-size: 9vw;
+  max-width: 400px;
+}
+.nosotros-values-list {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.nosotros-value-num {
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.nosotros-value-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.nosotros-value-body {
+  font-size: 1.25rem;
+}
+
+/* Track Record */
+.nosotros-track-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.nosotros-track-row {
+  display: grid;
+  grid-template-columns: clamp(8rem, 18vw, 16rem) 1fr;
+  align-items: center;
+  gap: clamp(2.5rem, 4vw, 4.5rem);
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+  border-top: 1px solid var(--border-inverse);
+}
+
+.nosotros-track-row:last-child {
+  border-bottom: 1px solid var(--border-inverse);
+}
+
+.nosotros-track-num {
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 8vw, 8rem);
+  font-weight: 900;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.nosotros-track-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: clamp(1rem, 2.2vw, 2.5rem);
+  padding-top: 0.2rem;
+}
+
+.nosotros-track-label {
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  color: var(--bg-light);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.nosotros-track-detail {
+  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+  color: var(--text-on-dark-muted);
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+@media (max-width: 768px) {
+  .nosotros-philosophy {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .nosotros-philosophy-title {
+    position: static;
+  }
+
+  .nosotros-track-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .nosotros-track-body {
+    padding-left: 0;
+    padding-top: 0;
+  }
+}

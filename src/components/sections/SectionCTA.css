@@ -1,0 +1,84 @@
+.sec-cta {
+  background-color: var(--bg-dark);
+  padding: clamp(80px, 12vw, 160px) 0;
+}
+
+.sec-cta__container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 4%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sec-cta__heading {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--warm-white);
+  text-transform: none;
+}
+
+.sec-cta__lead {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--text-on-dark-muted);
+  max-width: 520px;
+}
+
+.sec-cta__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 480px) {
+  .sec-cta__actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.sec-cta__btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.25rem;
+  background-color: var(--accent);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.sec-cta__btn-primary:hover {
+  background-color: var(--accent-olive);
+}
+
+.sec-cta__link-secondary {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-on-dark-muted);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(250, 249, 247, 0.28);
+  padding-bottom: 2px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.sec-cta__link-secondary:hover {
+  color: var(--warm-white);
+  border-color: rgba(250, 249, 247, 0.6);
+}

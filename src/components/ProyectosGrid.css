@@ -1,0 +1,260 @@
+.pgrid-section {
+  background: var(--bg-dark);
+  padding-bottom: clamp(6rem, 12vw, 10rem);
+}
+
+.pgrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(3rem, 6vw, 5rem) clamp(2rem, 4vw, 3.5rem);
+}
+
+/* ── Card ──────────────────────────────────────────────────── */
+
+.pgrid-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── Image wrapper ─────────────────────────────────────────── */
+
+.pgrid-image-wrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--charcoal);
+  border: 1px solid var(--border-inverse);
+}
+
+.pgrid-link {
+  display: block;
+  position: absolute;
+  inset: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pgrid-slides {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.pgrid-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: clamp(0.75rem, 1.5vw, 1.1rem);
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: scale(1);
+  filter: grayscale(10%);
+}
+
+.pgrid-slide.active {
+  opacity: 1;
+}
+
+.pgrid-card:hover .pgrid-slide {
+  filter: grayscale(0%);
+  transform: scale(1.015);
+}
+
+
+/* ── Carousel controls ─────────────────────────────────────── */
+
+.pgrid-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: var(--overlay-dark);
+  border: 1px solid rgba(92, 107, 115, 0.4);
+  cursor: pointer;
+  color: var(--text-on-dark);
+  /* Meets 44×44px minimum touch target */
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  border-radius: 2px;
+  opacity: 0;
+  touch-action: manipulation;
+  transition: opacity 0.2s ease, color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.pgrid-card:hover .pgrid-btn {
+  opacity: 1;
+}
+
+.pgrid-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--overlay-dark-strong);
+}
+
+.pgrid-btn-prev { left: 0.75rem; }
+.pgrid-btn-next { right: 0.75rem; }
+
+.pgrid-counter {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 10;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--text-on-dark-muted);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.pgrid-card:hover .pgrid-counter {
+  opacity: 1;
+}
+
+.pgrid-dots {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0;
+  z-index: 10;
+}
+
+/* Dot buttons have a large invisible touch area; the visual dot is via ::before */
+.pgrid-dot {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  touch-action: manipulation;
+  flex-shrink: 0;
+}
+
+.pgrid-dot::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(250, 249, 247, 0.3);
+  transition: background 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.pgrid-dot.active::before {
+  background: var(--accent);
+  transform: scale(1.5);
+}
+
+/* ── Card meta ─────────────────────────────────────────────── */
+
+.pgrid-meta {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  padding-top: 0.25rem;
+  border-top: 1px solid var(--border-inverse);
+  transition: border-color 0.25s ease;
+}
+
+.pgrid-card:hover .pgrid-meta {
+  border-color: var(--accent);
+}
+
+.pgrid-type {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.pgrid-client {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  color: var(--warm-white);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+
+.pgrid-project {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--secondary);
+  margin: 0;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+
+/* ── Focus states ──────────────────────────────────────────── */
+
+.pgrid-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  opacity: 1;
+}
+
+.pgrid-dot:focus-visible::before {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.pgrid-link:focus-visible,
+.pgrid-meta:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .pgrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pgrid-btn {
+    opacity: 1;
+  }
+
+  .pgrid-counter {
+    opacity: 1;
+  }
+}
+
+/* ── Reduced motion ────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .pgrid-slide {
+    transition: opacity 0.15s ease;
+  }
+
+  .pgrid-card:hover .pgrid-slide {
+    transform: scale(1); /* disable zoom */
+  }
+
+  .pgrid-dot::before,
+  .pgrid-btn {
+    transition: none;
+  }
+}

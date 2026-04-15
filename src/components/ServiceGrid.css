@@ -1,0 +1,121 @@
+.service-section {
+  background-color: var(--bg-dark);
+}
+
+.service-header {
+  margin-bottom: clamp(4rem, 10vw, 8rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.service-header .subtitle {
+  color: var(--secondary);
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border-inverse);
+}
+
+.service-list-item {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--border-inverse);
+  color: var(--bg-light);
+  transition: var(--transition), transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.service-list-item::after {
+  display: none; /* remove global hover-underline style */
+}
+
+.service-list-item {
+  will-change: transform;
+}
+
+.service-list-item:hover {
+  background-color: rgba(250, 249, 247, 0.04);
+  transform: translateX(1.5rem);
+}
+
+.service-list-number {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: 2rem;
+  color: var(--accent);
+  min-width: 60px;
+}
+
+.service-list-title {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 0;
+  color: var(--bg-light);
+}
+
+.service-list-desc {
+  color: var(--secondary);
+  font-size: 1.1rem;
+}
+
+.service-list-arrow {
+  color: var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.service-list-item:hover .service-list-arrow {
+  transform: translateX(10px);
+}
+
+@media (max-width: 1024px) {
+  .service-list-item {
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    padding: 2rem 0;
+  }
+  
+  .service-list-number {
+    grid-row: 1 / 3;
+    align-self: flex-start;
+  }
+  
+  .service-list-title {
+    grid-column: 2 / 3;
+  }
+  
+  .service-list-desc {
+    grid-column: 2 / 3;
+    grid-row: 2;
+    margin-top: 0.5rem;
+  }
+  
+  .service-list-arrow {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-list-item {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  
+  .service-list-number {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .service-list-arrow {
+    position: absolute;
+    top: 2rem;
+    right: 0;
+  }
+}
