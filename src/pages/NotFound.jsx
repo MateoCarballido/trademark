@@ -1,8 +1,15 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import PageSEO from '../components/PageSEO';
 
 export default function NotFound() {
   return (
+    <>
+      <PageSEO
+        title="Página no encontrada"
+        description="La página que buscás no existe o fue movida."
+        robots="noindex, nofollow"
+      />
     <div style={{
       minHeight: '80vh',
       display: 'flex',
@@ -23,5 +30,6 @@ export default function NotFound() {
         Volver al inicio <ArrowRight size={20} aria-hidden="true" />
       </Link>
     </div>
+    </>
   );
 }

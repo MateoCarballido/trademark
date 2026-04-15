@@ -7,8 +7,8 @@ const localBusiness = {
   description:
     'Diseñamos, producimos e instalamos la comunicación visual de marcas en puntos de venta — cartelería exterior, montajes en tiendas, señalética y branding aplicado.',
   url: 'https://trademark.com.ar',
-  logo: 'https://trademark.com.ar/trademark-logo-dark.png',
-  image: 'https://trademark.com.ar/og-image.jpg',
+  logo: 'https://trademark.com.ar/trademark-logo-dark.svg',
+  image: 'https://trademark.com.ar/og-image.svg',
   telephone: '+5491147993002',
   email: 'info@trademark.com.ar',
   address: {
@@ -47,7 +47,7 @@ const localBusiness = {
     ],
   },
   sameAs: [
-    'https://www.instagram.com/trademarkgrafica/"',
+    'https://www.instagram.com/trademarkgrafica/',
   ],
 };
 

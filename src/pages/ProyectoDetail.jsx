@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { allProjects } from '../data/allProjects';
+import PageSEO from '../components/PageSEO';
 import './ProyectoDetail.css';
 
 export default function ProyectoDetail() {
@@ -17,8 +18,22 @@ export default function ProyectoDetail() {
   const prev = () => setSlide((s) => (s - 1 + images.length) % images.length);
   const next = () => setSlide((s) => (s + 1) % images.length);
 
+  const seoTitle = `${project.client} — ${project.project}`;
+  const seoDescription = `${project.challenge} ${project.result}`.slice(0, 155);
+
   return (
     <div className="proyecto-detail" style={{ paddingTop: 'var(--nav-height)', background: 'var(--bg-dark)' }}>
+      <PageSEO
+        title={seoTitle}
+        description={seoDescription}
+        canonical={`/proyectos/${project.slug}`}
+        ogType="article"
+        breadcrumbs={[
+          { name: 'Inicio', path: '/' },
+          { name: 'Proyectos', path: '/proyectos' },
+          { name: project.client, path: `/proyectos/${project.slug}` },
+        ]}
+      />
 
       {/* Hero carousel */}
       <div className="proyecto-hero-carousel">

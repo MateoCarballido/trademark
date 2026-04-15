@@ -31,17 +31,72 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://trademark.com.ar/proyectos/mega-ride</loc>
+    <loc>https://trademark.com.ar/proyectos/adidas-argentina</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://trademark.com.ar/proyectos/anthony-edwards</loc>
+    <loc>https://trademark.com.ar/proyectos/adidas-nmd</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://trademark.com.ar/proyectos/superstar</loc>
+    <loc>https://trademark.com.ar/proyectos/adidas-originals</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://trademark.com.ar/proyectos/adidas-popup</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://trademark.com.ar/proyectos/adidas-superstar</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://trademark.com.ar/proyectos/adidas-tubular</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://trademark.com.ar/proyectos/buddies</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://trademark.com.ar/proyectos/evento</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://trademark.com.ar/proyectos/lacoste</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://trademark.com.ar/proyectos/laza</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://trademark.com.ar/proyectos/danvers</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://trademark.com.ar/proyectos/reebok</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://trademark.com.ar/proyectos/vehiculos</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://trademark.com.ar/proyectos/varios</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

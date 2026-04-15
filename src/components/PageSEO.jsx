@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 
 const SITE_NAME = 'TradeMark BrandCare';
 const BASE_URL = 'https://trademark.com.ar';
-const DEFAULT_IMAGE = `${BASE_URL}/og-image.jpg`;
+const DEFAULT_IMAGE = `${BASE_URL}/og-image.svg`;
 
 // breadcrumbs: [{ name: 'Inicio', path: '/' }, { name: 'Servicios', path: '/servicios' }]
 function buildBreadcrumbSchema(breadcrumbs) {
@@ -25,6 +25,7 @@ export default function PageSEO({
   ogImage = DEFAULT_IMAGE,
   ogType = 'website',
   breadcrumbs,
+  robots,
 }) {
   const fullTitle = `${title} | ${SITE_NAME}`;
   const breadcrumbSchema = breadcrumbs ? buildBreadcrumbSchema(breadcrumbs) : null;
@@ -33,6 +34,7 @@ export default function PageSEO({
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      {robots && <meta name="robots" content={robots} />}
       {canonical && <link rel="canonical" href={`${BASE_URL}${canonical}`} />}
 
       {/* Open Graph */}

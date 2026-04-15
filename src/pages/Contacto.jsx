@@ -13,7 +13,6 @@ const WHATSAPP_FALLBACK_MESSAGE = encodeURIComponent(
 );
 
 export default function Contacto() {
-  console.log("FORM ID:", import.meta.env.VITE_FORMSPREE_FORM_ID);
   const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'error'
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -195,7 +194,7 @@ export default function Contacto() {
 
               <div className="contacto-hours">
                 <strong>Horario de atención:</strong><br />
-                Lunes a viernes de 9:00 a 18:00 hs.
+                Lunes a viernes de 8:00 a 17:00 hs.
               </div>
             </div>
           </div>
