@@ -13,7 +13,7 @@ export default function Nosotros() {
     <div className="page-nosotros" style={{ background: 'var(--bg-dark)' }}>
       <PageSEO
         title="Quiénes Somos — 30 Años en Comunicación Visual"
-        description="Somos el equipo operativo y creativo que garantiza la presencia visual de tu marca en cada punto de venta. 30 años de experiencia, más de 20.000 proyectos en Argentina."
+        description="Somos el equipo de comunicación visual y gráfica para puntos de venta detrás de TradeMark BrandCare — antes Trademark Gráfica. Más de 30 años y 20.000 proyectos en Argentina."
         canonical="/nosotros"
         breadcrumbs={[{ name: 'Inicio', path: '/' }, { name: 'Nosotros', path: '/nosotros' }]}
       />
@@ -48,8 +48,8 @@ export default function Nosotros() {
             <div className="nosotros-track-row">
               <span className="nosotros-track-num">30+</span>
               <div className="nosotros-track-body">
-                <h3 className="nosotros-track-label">Años en el mercado</h3>
-                <p className="nosotros-track-detail">Tres décadas construyendo la presencia visual de marcas en puntos de venta de todo el país.</p>
+                <h3 className="nosotros-track-label">Años acompañando marcas en su comunicación visual</h3>
+                <p className="nosotros-track-detail">Una evolución natural de nuestra trayectoria en gráfica e impresión, aplicada hoy a cada punto de venta.</p>
               </div>
             </div>
             <div className="nosotros-track-row">

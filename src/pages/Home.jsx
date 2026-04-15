@@ -11,7 +11,7 @@ export default function Home() {
     <div className="page-home">
       <PageSEO
         title="Comunicación Visual para Puntos de Venta"
-        description="Diseñamos, producimos e instalamos señalética, cartelería y montajes para tus locales. Un equipo, cero intermediarios. Buenos Aires y todo el país."
+        description="Diseñamos, producimos e instalamos gráfica, señalética, impresión y cartelería para tus locales. Un equipo, cero intermediarios. Buenos Aires y todo el país."
         canonical="/"
       />
       <SchemaOrg />

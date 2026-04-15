@@ -4,8 +4,9 @@ const localBusiness = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'TradeMark BrandCare',
+  alternateName: 'Trademark Gráfica',
   description:
-    'Diseñamos, producimos e instalamos la comunicación visual de marcas en puntos de venta — cartelería exterior, montajes en tiendas, señalética y branding aplicado.',
+    'Diseñamos, producimos e instalamos comunicación visual para puntos de venta — gráfica, impresión, cartelería exterior, montajes en tiendas y señalética. Buenos Aires y todo el país.',
   url: 'https://trademark.com.ar',
   logo: 'https://trademark.com.ar/trademark-logo-dark.svg',
   image: 'https://trademark.com.ar/og-image.svg',
